@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+	<h1>
+		Hi!
+	</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome to My App!</h1>
+		<p>
+			You've found the home page for the
+			<%= link_to "OMR", "http://powerful-harbor-6317.herokuapp.com"%>
+			application
+		</p>
+		<p>
+			<%= link_to "Sign up now", new_user_registration_path, class: "btn btn-primary btn-large"%>
+		</p>
+	</div>
+<% end %>
