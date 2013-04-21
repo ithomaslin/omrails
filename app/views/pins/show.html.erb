@@ -2,11 +2,11 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<%= image_tag @pin.image %>
-			<p>
-			  <%= @pin.user.name %>
-			</p>
-			<p>
+			<p class="description">
 			  <%= @pin.description %>
+			</p>
+			<p class="footer">
+			  <%= @pin.user.name %>
 			</p>
 			<% if current_user == @pin.user %>
 				<%= link_to 'Edit', edit_pin_path(@pin) %> |
