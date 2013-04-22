@@ -24,7 +24,7 @@
             <li>
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.name %></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><%= link_to "Profile", User.find(params[:id]) %></li>
+                
                 <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
               </ul>
