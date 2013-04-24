@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'devise'
+gem 'devise-i18n'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
