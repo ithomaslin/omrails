@@ -5,11 +5,10 @@
 jQuery ->
 	$('#pins').imagesLoaded ->
 		$('#pins').masonry itemSelector: ".box"
-
+		
 jQuery ->
-    $('#pins').imagesLoaded ->
+	$('#pins').imagesLoaded ->
         $('#pins').masonry itemSelector: ".box"
-
  	if $('.pagination').length
  		$(window).scroll ->
 	      url = $('.pagination .next_page a').attr('href')
