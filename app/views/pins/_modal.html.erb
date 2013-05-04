@@ -1,0 +1,24 @@
+<div id="myModal<%= pin.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">  
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>  
+    <h3 id="myModalLabel">&nbsp;</h3>
+  </div>
+  <div class="modal-body">
+    <%= image_tag pin.image %>
+    <p>
+    	<%= pin.description %>
+    </p>
+    <p>
+	    <strong>
+		  <%= pin.user.name %>
+		</strong>
+	</p>
+	<% if current_user == pin.user %>
+		<p>
+			<%= link_to 'Edit', edit_pin_path(pin) %> | 
+			<%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
+	<% end %>
+    <span class="small"><%= link_to "Show Full Size", pin %></span>    
+  </div>  
+</div>
