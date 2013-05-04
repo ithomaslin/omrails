@@ -3,14 +3,14 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>  
     <h3 id="myModalLabel">&nbsp;</h3>
   </div>
-  <div class="modal-body">
+  <div class="modal-body max-height:600px">
     <%= image_tag pin.image %>
     <p>
     	<%= pin.description %>
     </p>
     <p>
 	    <strong>
-		  <%= pin.user.name %>
+		  <%= link_to pin.user.name, pin.user %>
 		</strong>
 	</p>
 	<% if current_user == pin.user %>
@@ -19,6 +19,9 @@
 			<%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</p>
 	<% end %>
-    <span class="small"><%= link_to "Show Full Size", pin %></span>    
-  </div>  
+  </div>
+  <div class="modal-footer">
+  	<%= link_to "Show Full Size", pin, class: "btn btn-primary" %>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
 </div>
