@@ -20,6 +20,7 @@
 		    </ul>
     		<ul class="nav pull-right dropdown">
           <% if user_signed_in? %>
+            <!--<li><a href="#newPinModal" data-toggle="modal">Add +</a></li>-->
             <li><%= link_to "Add +", new_pin_path %></li>
             <li>
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-black"></i> <%= current_user.name %></a>
@@ -27,15 +28,14 @@
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                 <li class="divider"></li>
-                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Log In", new_user_session_path %></li>
           <% end %>
     		</ul>
       </div>
- 
     </div>
   </div>
 </div>
