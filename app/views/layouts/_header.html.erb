@@ -20,8 +20,8 @@
 		    </ul>
     		<ul class="nav pull-right dropdown">
           <% if user_signed_in? %>
-            <!--<li><a href="#newPinModal" data-toggle="modal">Add +</a></li>-->
-            <li><%= link_to "Add +", new_pin_path %></li>
+            <li><a href="#newPinModal" data-toggle="modal">Add +</a></li>
+            <!--<li><%= link_to "Add +", new_pin_path %></li>-->
             <li>
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-black"></i> <%= current_user.name %></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -32,10 +32,16 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Log In", new_user_session_path %></li>
+            <li><a href="#loginModal" data-toggle="modal">Log In</a></li>
+            <!--<li><%= link_to "Log In", new_user_session_path %></li>-->
           <% end %>
     		</ul>
       </div>
     </div>
   </div>
 </div>
+
+<%= render 'layouts/modalLogin' %>
+<% if user_signed_in? %>
+  <%= render 'layouts/modalNewPin' %>
+<% end %>

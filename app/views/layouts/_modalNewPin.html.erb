@@ -1,0 +1,17 @@
+<div id="newPinModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+    <h3 id="myModalLabel">New Pin</h3>
+  </div>
+  <div class="modal-body">
+    <div style="width:200px; margin-left:auto; margin-right:auto;">
+      <%= simple_form_for @pin = current_user.pins.new(params[:pin]) do |f| %>
+        <%= f.input :image, label: "Upload an image" %>
+        <%= f.input :image_remote_url, label: "or enter a URL" %>
+        <%= f.input :description, as: :text, input_html: { rows: "3"} %>
+        <%= f.button :submit, class: "btn btn-primary" %>&nbsp;
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <% end %>
+    </div>
+  </div>  
+</div>
