@@ -1,6 +1,10 @@
 Omrails::Application.routes.draw do
+  resources :likes
+
+
   get "users/show"
 
+  resources :likes
   resources :pins
 
   devise_for :users,

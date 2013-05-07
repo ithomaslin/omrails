@@ -1,6 +1,8 @@
 class Pin < ActiveRecord::Base
   attr_accessible :description, :image, :image, :image_remote_url
 
+  has_attached_file :image, styles: { medium: "320x240>", large: '600x400>' }
+
   validates :description, presence: true
   validates :user_id, presence: true
   validates_attachment :image, presence: true,
@@ -8,7 +10,8 @@ class Pin < ActiveRecord::Base
   						size: { less_than: 5.megabytes }
 
   belongs_to :user
-  has_attached_file :image, styles: { medium: "320x240>" }
+  has_many :likes
+  has_many :liking_users, :through => :likes, :source => :user
   
   def image_remote_url=(url_value)
     self.image = URI.parse(url_value) unless url_value.blank?

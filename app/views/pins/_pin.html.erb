@@ -1,6 +1,5 @@
 <div class="box">
 		<%= link_to (image_tag pin.image(:medium)), "#myModal#{pin.id}", "data-toggle" => "modal", class:"pin-img" %>
-		<a class="btn btn-mini"><i class=" icon-heart"></i></a>
 	<p class="description">
 		<%= pin.description %>
 	</p>
@@ -9,6 +8,11 @@
 			Posted by <%= link_to pin.user.name, pin.user %>
 		</strong>
 	</p>
+
+	<div id="like_star_<%= pin.id %>">
+		<%= render 'pins/star', :pin => pin %>
+	</div>
+
 	<% if current_user == pin.user %>
 		<p>
 			<%= link_to 'Edit', edit_pin_path(pin) %> | 

@@ -84,4 +84,13 @@ class PinsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def get_resource
+    @pin = Pin.find(params[:id])
+    unless @pin.user == current_user
+      redirect_to root_url, alert: 'Not authorized for this action.'
+    end
+  end
 end

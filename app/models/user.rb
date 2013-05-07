@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :pins, :dependent => :destroy
+  has_many :likes
+  has_many :liked_pins, :through => :likes, :source => :pin
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
