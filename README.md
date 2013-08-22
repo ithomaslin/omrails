@@ -1,6 +1,6 @@
 # One Month Rails
 
-This is the sample app for
-[*One Month Rails][]http://...]
+This is the app for personal project
+[Pin][http://powerful-harbor-6317.herokuapp.com]
 
 by [Thomas Lin]
